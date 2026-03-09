@@ -17,7 +17,16 @@ import folium
 
 
 def sort_by_time(arr):
-    pass
+    fileread = [x for x in arr if x.get("datetime")]
+    fileread.sort(key=lambda x: x["datetime"])
+
+    html = "<div class=timeline>\n"
+
+    for i in fileread:
+        html += f"<div>{i['datetime']} - {i['filename']}</div>\n"
+
+    html += "</div>"
+    return html
 
 
 def create_map(images_data):
@@ -31,7 +40,6 @@ def create_map(images_data):
         string של HTML (המפה)
     """
     pass
-
 
 
 if __name__ == "__main__":
