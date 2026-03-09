@@ -15,8 +15,16 @@ map_view.py - יצירת מפה אינטראקטיבית
 
 import folium
 
-
 def sort_by_time(arr):
+    '''
+
+    Args:
+        arr:
+            list
+    Returns:
+        HDML string
+
+    '''
     fileread = [x for x in arr if x.get("datetime")]
     fileread.sort(key=lambda x: x["datetime"])
 
